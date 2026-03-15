@@ -17,14 +17,14 @@ static priority_queue<int, vector<int>, greater<int>> minHeap;
 
 
 // constructor
-HeapAnalyzer::HeapAnalyzer(int k)
+HeapAnalysis::HeapAnalysis(int k)
 {
     K = k;
 }
 
 
 // process new price
-void HeapAnalyzer::processPrice(int price)
+void HeapAnalysis::processPrice(int price)
 {
     // update max price
     if(price > maxPrice)
@@ -44,21 +44,21 @@ void HeapAnalyzer::processPrice(int price)
 
 
 // return maximum price
-int HeapAnalyzer::getMaxPrice()
+int HeapAnalysis::getMaxPrice()
 {
     return maxPrice;
 }
 
 
 // return minimum price
-int HeapAnalyzer::getMinPrice()
+int HeapAnalysis::getMinPrice()
 {
     return minPrice;
 }
 
 
 // return top K prices
-vector<int> HeapAnalyzer::getTopKPrices()
+vector<int> HeapAnalysis::getTopKPrices()
 {
     vector<int> result;
 

@@ -7,38 +7,6 @@
 
 using namespace std;
 
-
-// STACK ANALYZER
-class StackAnalyzer {
-public:
-    int processSpan(int price);
-    int nextGreater(int price);
-};
-
-
-// HEAP ANALYZER
-class HeapAnalyzer {
-public:
-    HeapAnalyzer(int k);
-
-    void processPrice(int price);
-
-    int getMaxPrice();
-    int getMinPrice();
-
-    vector<int> getTopKPrices();
-};
-
-
-// PROFIT ANALYZER
-class ProfitAnalyzer {
-public:
-    void processPrice(int price);
-    int getMaxProfit();
-};
-
-
-
 int main()
 {
     int k;
@@ -46,9 +14,9 @@ int main()
     cout << "Enter value of K: ";
     cin >> k;
 
-    StackAnalyzer stackAnalyzer;
-    HeapAnalyzer heapAnalyzer(k);
-    ProfitAnalyzer profitAnalyzer;
+    StackAnalysis stackAnalysis;
+    HeapAnalysis heapAnalysis(k);
+    ProfitAnalysis profitAnalysis;
 
     int price;
 
@@ -64,20 +32,20 @@ int main()
         cout << "\nNew Price: " << price << endl;
 
         // STACK OPERATIONS
-        int span = stackAnalyzer.processSpan(price);
-        int nge  = stackAnalyzer.nextGreater(price);
+        int span = stackAnalysis.processSpan(price);
+        int nge  = stackAnalysis.nextGreater(price);
 
         // HEAP OPERATIONS
-        heapAnalyzer.processPrice(price);
+        heapAnalysis.processPrice(price);
 
-        int maxPrice = heapAnalyzer.getMaxPrice();
-        int minPrice = heapAnalyzer.getMinPrice();
+        int maxPrice = heapAnalysis.getMaxPrice();
+        int minPrice = heapAnalysis.getMinPrice();
 
-        vector<int> topK = heapAnalyzer.getTopKPrices();
+        vector<int> topK = heapAnalysis.getTopKPrices();
 
         // PROFIT CALCULATION
-        profitAnalyzer.processPrice(price);
-        int maxProfit = profitAnalyzer.getMaxProfit();
+        profitAnalysis.processPrice(price);
+        int maxProfit = profitAnalysis.getMaxProfit();
 
 
         cout << "Max Price: " << maxPrice << endl;

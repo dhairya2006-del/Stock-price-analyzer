@@ -1,13 +1,13 @@
-#ifndef HEAP_ANALYZER_H
-#define HEAP_ANALYZER_H
+#ifndef HEAP_ANALYSIS_H
+#define HEAP_ANALYSIS_H
 
 #include <vector>
 
-class HeapAnalyzer
+class HeapAnalysis
 {
 public:
     // constructor
-    HeapAnalyzer(int k);
+    HeapAnalysis(int k);
 
     // process incoming stock price
     void processPrice(int price);
