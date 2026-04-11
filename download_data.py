@@ -4,16 +4,16 @@ import pandas as pd
 # choose stock ticker
 ticker = "AAPL"
 
-# download historical data
-data = yf.download(ticker, period="5y", interval="1d")
+# ✅ USE RECENT DATA ONLY (IMPORTANT)
+data = yf.download(ticker, start="2024-01-01", interval="1d")
 
 # keep only date and closing price
 data = data.reset_index()[["Date", "Close"]]
 
-# rename columns for easier C++ parsing
+# rename columns
 data.columns = ["date", "price"]
 
-# save to csv
+# save
 data.to_csv("raw_prices.csv", index=False)
 
 print("Dataset saved as raw_prices.csv")
