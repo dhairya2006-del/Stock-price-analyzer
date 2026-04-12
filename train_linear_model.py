@@ -62,5 +62,14 @@ sample = pd.DataFrame(
 predicted_price = model.predict(sample)
 print("Predicted next price:", predicted_price[0])
 
+results = pd.DataFrame({
+    "date": data["date"].iloc[split_index:],
+    "actual": y_test.values,
+    "predicted": predictions
+})
+
+results.to_csv("data/lr_results.csv", index=False)
+
+print("✅ lr_results.csv created!")
 #Mean Absolute Error: 2.8093588790129362
 # Predicted next price: 118.87620069662505

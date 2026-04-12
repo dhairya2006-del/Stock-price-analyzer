@@ -3,7 +3,7 @@ import xgboost as xgb
 from sklearn.metrics import mean_absolute_error
 
 # Load data
-df = pd.read_csv("data/features_with_sentiment.csv")
+df = pd.read_csv("data/features.csv")
 
 # 🔥 Simulate sentiment
 df["sentiment"] = df["price"].pct_change()
@@ -56,3 +56,11 @@ preds = model.predict(X_test)
 mae = mean_absolute_error(y_test, preds)
 
 print("XGBoost MAE:", mae)
+
+results = pd.DataFrame({
+    "date": df["date"].iloc[split:],
+    "actual": df["price"].iloc[split:],
+    "predicted": df["price"].iloc[split:] + preds
+})
+
+results.to_csv("data/xgb_results.csv", index=False)

@@ -3,7 +3,7 @@ from sklearn.ensemble import RandomForestRegressor
 from sklearn.metrics import mean_absolute_error
 
 # Load data
-df = pd.read_csv("data/features_with_sentiment.csv")
+df = pd.read_csv("data/features.csv")
 
 # 🔥 Simulate sentiment from price movement
 df["sentiment"] = df["price"].pct_change()
@@ -54,3 +54,11 @@ preds = model.predict(X_test)
 mae = mean_absolute_error(y_test, preds)
 
 print("Random Forest MAE:", mae)
+
+results = pd.DataFrame({
+    "date": df["date"].iloc[split:],
+    "actual": df["price"].iloc[split:],
+    "predicted": df["price"].iloc[split:] + preds
+})
+
+results.to_csv("data/rf_results.csv", index=False)
