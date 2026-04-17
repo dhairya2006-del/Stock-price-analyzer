@@ -117,7 +117,7 @@ streamlit run dashboard.py
 ### Run C++ Code
 
 ```bash
-g++ src/*.cpp -o main
+g++ src/main.cpp src/heap_analysis.cpp src/stack_analysis.cpp src/profit_analysis.cpp -o main
 ./main
 ```
 
