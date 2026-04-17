@@ -70,7 +70,9 @@ XGBoost
 matplotlib
 Streamlit
 
-📂 Project Structure
+## 📁 Project Structure
+
+```
 Stock-price-analyzer/
 │── data/
 │── include/        # Header files (Heap, Stack, Profit logic)
@@ -81,48 +83,76 @@ Stock-price-analyzer/
 │── train_random_forest.py
 │── train_xgboost.py
 │── main.exe
+```
 
-⚙️ Installation
+---
+
+## ⚙️ Installation
+
+```bash
 git clone https://github.com/dhairya2006-del/Stock-price-analyzer.git
 cd Stock-price-analyzer
 pip install -r requirements.txt
+```
 
-▶️ Usage
+---
 
-Run ML Pipeline
+## ▶️ Usage
+
+### Run ML Pipeline
+
+```bash
 python download_data.py
 python train_linear_model.py
 python train_random_forest.py
 python train_xgboost.py
+```
 
-Run Dashboard
+### Run Dashboard
+
+```bash
 streamlit run dashboard.py
+```
 
-Run C++ Code
+### Run C++ Code
+
+```bash
 g++ src/*.cpp -o main
 ./main
+```
 
-🧠 How It Works
-Collect stock price data
-Generate features for prediction
-Apply DSA techniques:
-Heap → efficient price tracking
-Stack → trend detection
-Profit algorithms → trading insights
-Train ML models
-Evaluate using MAE
-Visualize results in dashboard
+---
 
-🔮 Future Improvements
-LSTM / Deep Learning models
-Real-time API integration (Yahoo Finance)
-Backtesting trading strategies
-Portfolio optimization
-Deployment (AWS / Streamlit Cloud)
+## 🧠 How It Works
 
-💡 Key Learnings
-Applied DSA concepts to financial data
-Built an end-to-end ML pipeline
-Compared multiple models effectively
-Learned importance of ensemble methods (Random Forest)
+1. Collect stock price data
+2. Generate features for prediction
+3. Apply DSA techniques:
+
+   * Heap → efficient price tracking
+   * Stack → trend detection
+   * Profit algorithms → trading insights
+4. Train ML models
+5. Evaluate using MAE
+6. Visualize results in dashboard
+
+---
+
+## 🔮 Future Improvements
+
+* LSTM / Deep Learning models
+* Real-time API integration (Yahoo Finance)
+* Backtesting trading strategies
+* Portfolio optimization
+* Deployment (AWS / Streamlit Cloud)
+
+---
+
+## 💡 Key Learnings
+
+* Applied DSA concepts to financial data
+* Built an end-to-end ML pipeline
+* Compared multiple models effectively
+* Learned importance of ensemble methods (Random Forest)
+
 
