@@ -3,16 +3,12 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from sklearn.metrics import mean_absolute_error
 
-# =========================
 # PAGE CONFIG
-# =========================
 st.set_page_config(page_title="Stock Dashboard", layout="wide")
 
 st.title("📊 Stock Price Analyzer")
 
-# =========================
 # LOAD DATA
-# =========================
 df = pd.read_csv("data/features.csv")
 df["date"] = pd.to_datetime(df["date"])
 
@@ -24,9 +20,9 @@ lr["date"] = pd.to_datetime(lr["date"])
 rf["date"] = pd.to_datetime(rf["date"])
 xgb["date"] = pd.to_datetime(xgb["date"])
 
-# =========================
+
 # SIDEBAR NAVIGATION
-# =========================
+
 st.sidebar.title("📂 Navigation")
 
 page = st.sidebar.radio(
@@ -34,9 +30,9 @@ page = st.sidebar.radio(
     ["📈 Price Dashboard", "📊 Model Comparison", "📉 Performance Metrics"]
 )
 
-# =========================
+
 # PAGE 1: PRICE DASHBOARD
-# =========================
+
 if page == "📈 Price Dashboard":
 
     st.header("📈 Stock Price Trend")
@@ -49,16 +45,16 @@ if page == "📈 Price Dashboard":
 
     st.pyplot(fig)
 
-# =========================
+
 # PAGE 2: MODEL COMPARISON
-# =========================
+
 elif page == "📊 Model Comparison":
 
     st.header("📊 Model-wise Comparison")
 
-    # -------------------------
+    
     # Linear Regression (Green)
-    # -------------------------
+    
     st.subheader("🟢 Linear Regression")
 
     fig1, ax1 = plt.subplots(figsize=(10,4))
@@ -82,9 +78,9 @@ elif page == "📊 Model Comparison":
 
     st.pyplot(fig1)
 
-    # -------------------------
+    
     # Random Forest (Orange)
-    # -------------------------
+    
     st.subheader("🟠 Random Forest")
 
     fig2, ax2 = plt.subplots(figsize=(10,4))
@@ -108,9 +104,9 @@ elif page == "📊 Model Comparison":
 
     st.pyplot(fig2)
 
-    # -------------------------
+    
     # XGBoost (Red)
-    # -------------------------
+    
     st.subheader("🔴 XGBoost")
 
     fig3, ax3 = plt.subplots(figsize=(10,4))
@@ -134,9 +130,9 @@ elif page == "📊 Model Comparison":
 
     st.pyplot(fig3)
 
-# =========================
+
 # PAGE 3: PERFORMANCE METRICS
-# =========================
+
 elif page == "📉 Performance Metrics":
 
     st.header("📊 Model Performance")

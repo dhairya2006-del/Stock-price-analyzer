@@ -6,7 +6,7 @@
 class HeapAnalysis
 {
 public:
-    // constructor
+    
     HeapAnalysis(int k);
 
     // process incoming stock price
