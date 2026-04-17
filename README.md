@@ -52,9 +52,27 @@ It bridges **core computer science concepts** with **real-world financial applic
 | Random Forest      | **1.19** ⭐ |
 | XGBoost            | 1.78 |
 
-👉 **Best Model: Random Forest (lowest error, better generalization)**
+👉 **Best Model: Random Forest (lowest error, better generalization)**    
+
+
+
+👉Derived features from raw stock data to capture trends, momentum, and trading opportunities
+
+👉Includes stock span, running max/min prices, and profit potential indicators
+<img width="1303" height="730" alt="image" src="https://github.com/user-attachments/assets/da43add7-995f-41f3-b7c6-a7ce20be71c5" />
+
+<img width="1313" height="720" alt="image" src="https://github.com/user-attachments/assets/a07ca429-e9ae-44e2-8690-3787458f89cb" />
+
+
+👉Model comparison based on MAE (lower is better)
+
+👉Visualization of prediction error — highlights model accuracy and consistency
+<img width="1316" height="737" alt="image" src="https://github.com/user-attachments/assets/c996f75a-a07e-4da0-b4df-a946db2f57a6" />
+
+<img width="1309" height="745" alt="image" src="https://github.com/user-attachments/assets/abef19b1-1470-4025-86a0-b742273a279a" />
 
 ---
+
 🛠️ Tech Stack
 
 Languages:
